@@ -19,8 +19,8 @@ async def on_ready():
 @bot.command()
 async def idiot(ctx):
     embed = discord.Embed(
-    title = "Помощь по спаму",
-    description = "`spam!spam_member`",
+    title = "Помощь test",
+    description = "`spam!test`",
     color = ''
     )
 
@@ -39,6 +39,12 @@ async def spam_member(ctx, member):
             Вы были заспамлены by hlebushek! Слава Украине! Смерть России
             Вы были заспамлены by hlebushek! Слава Украине! Смерть России
             Вы были заспамлены by hlebushek! Слава Украине! Смерть России''')
+
+@bot.command()
+async def test(ctx, member):
+    for line2 in range(0 , 10000):
+        channel = client.get_user(int(member))
+        await channel.send('''Тест''')
 
 
 

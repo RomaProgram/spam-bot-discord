@@ -1,6 +1,6 @@
 settings = {
-    'token': 'BOT_TOKEN',
-    'bot': 'BOT_NAME',
-    'id': BOT_ID,
-    'prefix': 'BOT_PREFIX'
+    'token': 'OTU1NTI2NjYyNjg1MDg5ODU1.G1jYpu.CYLflaUeEL1hXfbQdq0cCtBoc69vQ_VTNFRfTQ',
+    'bot': 'GuardBot',
+    'id': 955526662685089855,
+    'prefix': 'spam!'
 } 
