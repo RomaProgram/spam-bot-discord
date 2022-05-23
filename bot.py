@@ -12,17 +12,18 @@ bot.remove_command('help')
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(status=discord.Status.online, activity=discord.Game("Хороший бот"))
+    await bot.change_presence(status=discord.Status.online, activity=discord.Game("s!help"))
     print("Это самолёт, а не это вертолёт")
 
 @bot.command()
 async def help(ctx):
+    author = ctx.message.author
     embed = discord.Embed(
     title = "Помощь по спаму",
     description = "`spam!spam_server - Спам сервера`",
-    color = ''
+    color = 0xFF4500
     )
-    ctx.send(embed=embed)
+    author.send(embed=embed)
                     
 
 @bot.command()
