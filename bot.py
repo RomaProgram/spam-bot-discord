@@ -17,13 +17,13 @@ async def on_ready():
 
 @bot.command()
 async def help(ctx):
-    author = ctx.message.author
+    user = ctx.message.author
     embed = discord.Embed(
     title = "Помощь по спаму",
     description = "`spam!spam_server - Спам сервера`",
     color = 0xFF4500
     )
-    author.send(embed=embed)
+    user.send(embed=embed)
                     
 
 @bot.command()
