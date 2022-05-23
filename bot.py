@@ -28,8 +28,8 @@ async def help(ctx):
                     
 
 @bot.command()
-async def spam_server(ctx):
-    for line2 in range(0 , 10000):
+async def spam_server(ctx, n):
+    for line2 in range(0 , int(n)):
         guild = ctx.message.guild
         await guild.create_text_channel('сервер-заспамлен-by-hlebushek')
         await ctx.channel.send('''
