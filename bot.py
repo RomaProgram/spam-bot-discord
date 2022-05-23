@@ -14,6 +14,7 @@ async def on_ready():
     await bot.change_presence(status=discord.Status.online, activity=discord.Game("Хороший бот"))
     print("Это самолёт, а не это вертолёт")
 
+
 @bot.command()
 async def idiot(ctx):
     embed = discord.Embed(
@@ -21,13 +22,24 @@ async def idiot(ctx):
     description = "`spam!spam_member`",
     color = ''
     )
-                    
 
+                    
 @bot.command()
 async def spam_member(ctx, member):
     for line2 in range(0 , 10000):
         channel = client.get_user(int(member))
-        await channel.send('Вы были заспамлены by hlebushek! Слава Украине! Смерть России\nВы были заспамлены by hlebushek! Слава Украине! Смерть России\nВы были заспамлены by hlebushek! Слава Украине! Смерть России\nВы были заспамлены by hlebushek! Слава Украине! Смерть России\nВы были заспамлены by hlebushek! Слава Украине! Смерть России\nВы были заспамлены by hlebushek! Слава Украине! Смерть России\nВы были заспамлены by hlebushek! Слава Украине! Смерть России\nВы были заспамлены by hlebushek! Слава Украине! Смерть России\nВы были заспамлены by hlebushek! Слава Украине! Смерть России\nВы были заспамлены by hlebushek! Слава Украине! Смерть России')
+        await channel.send('''Вы были заспамлены by hlebushek! Слава Украине! Смерть России
+            Вы были заспамлены by hlebushek! Слава Украине! Смерть России
+            Вы были заспамлены by hlebushek! Слава Украине! Смерть России
+            Вы были заспамлены by hlebushek! Слава Украине! Смерть России
+            Вы были заспамлены by hlebushek! Слава Украине! Смерть России
+            Вы были заспамлены by hlebushek! Слава Украине! Смерть России
+            Вы были заспамлены by hlebushek! Слава Украине! Смерть России
+            Вы были заспамлены by hlebushek! Слава Украине! Смерть России
+            Вы были заспамлены by hlebushek! Слава Украине! Смерть России
+            Вы были заспамлены by hlebushek! Слава Украине! Смерть России''')
+
+
 @bot.command()
 async def stop(ctx):
     await bot.change_presence(status=discord.Status.offline)
