@@ -8,6 +8,7 @@ intents = discord.Intents.default()
 intents.members = True
 bot = commands.Bot(command_prefix = settings['prefix'],  intents = intents)
 client = commands.Bot(command_prefix = settings['prefix'],  intents = intents)
+bot.remove_command('help')
 
 @bot.event
 async def on_ready():
